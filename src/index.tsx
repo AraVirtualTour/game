@@ -1,10 +1,9 @@
 import * as React from 'react';
 import * as DOM from 'react-dom';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route 
-// } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route 
+} from 'react-router-dom';
 
 import Game from './game'
 
@@ -14,7 +13,11 @@ import './index.css';
 export default class App extends React.Component<any, any> {
   public render() {
     return (
-      <Game />
+      <Router basename={process.env.PUBLIC_URL}>
+        <Route path='/'>
+          <Game />
+        </Route>
+      </Router>
     );
   }
 }

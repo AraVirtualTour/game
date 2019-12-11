@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import loadImg from '../assets/logo.png'
+import loadImg from '../assets/char1.png'
 
 export default class TestScene extends Phaser.Scene {
   public scaleRatio: number;
@@ -10,10 +10,10 @@ export default class TestScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('phaser-logo', loadImg);
+    this.load.image('character', loadImg);
   }
 
   create() {
-    this.add.sprite(this.game.canvas.width / 2, this.game.canvas.height / 2, 'phaser-logo');
+    this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'character');
   }
 }
